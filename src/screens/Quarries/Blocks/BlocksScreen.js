@@ -13,7 +13,7 @@ import {
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import CustomDateTimePicker from '../../../components/CustomDateTimePicker';
-import {moderateVerticalScale} from 'react-native-size-matters';
+import {moderateScale, moderateVerticalScale} from 'react-native-size-matters';
 import {checkNetworkConnection} from '../../../utils/networkUtils';
 import {api} from '../../../utils/http.common';
 import {showGenericError, showToast} from '../../../utils/toastUtils';
@@ -269,24 +269,24 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8F9FA',
   },
   formContainer: {
-    padding: 16,
+    padding: moderateScale(10),
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#E9ECEF',
   },
   inputField: {
-    marginBottom: 16,
+    marginBottom: moderateScale(8),
   },
   label: {
     fontSize: 16,
     fontWeight: '600',
     color: '#212529',
-    marginBottom: 8,
+    marginBottom: moderateScale(2),
   },
   input: {
     backgroundColor: '#F8F9FA',
     borderRadius: 8,
-    padding: 12,
+    padding: moderateScale(8),
     fontSize: 16,
     borderWidth: 1,
     borderColor: '#E9ECEF',
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
   },
   typeBtn: {
     flex: 1,
-    padding: 12,
+    padding: moderateScale(6),
     backgroundColor: '#F8F9FA',
     borderRadius: 8,
     borderWidth: 1,
@@ -319,7 +319,7 @@ const styles = StyleSheet.create({
   dateButton: {
     backgroundColor: '#F8F9FA',
     borderRadius: 8,
-    padding: 12,
+    padding: moderateScale(6),
     borderWidth: 1,
     borderColor: '#E9ECEF',
   },
@@ -329,10 +329,10 @@ const styles = StyleSheet.create({
   },
   addButton: {
     backgroundColor: '#4B5E9E',
-    padding: 16,
+    padding: moderateScale(8),
     borderRadius: 8,
     alignItems: 'center',
-    marginTop: 8,
+    marginVertical: moderateScale(4),
   },
   addButtonText: {
     color: '#fff',
@@ -340,12 +340,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   list: {
-    padding: 8,
+    padding: moderateScale(4),
   },
   blockCard: {
-    // flex: 1,
+    flex: 1,
     width: '45%',
-    margin: 8,
+    margin: moderateScale(8),
     backgroundColor: '#fff',
     borderRadius: 12,
     overflow: 'hidden',
@@ -360,13 +360,13 @@ const styles = StyleSheet.create({
     height: 150,
   },
   blockInfo: {
-    padding: 12,
+    padding: moderateScale(8),
   },
   blockName: {
     fontSize: 14,
     fontWeight: '600',
     color: '#212529',
-    marginBottom: 4,
+    marginBottom: moderateScale(2),
   },
   blockDimensions: {
     fontSize: 12,
@@ -382,7 +382,7 @@ const styles = StyleSheet.create({
   modalContent: {
     width: '90%',
     backgroundColor: '#fff',
-    padding: 20,
+    padding: moderateScale(12),
     borderRadius: 12,
     alignItems: 'center',
   },
@@ -390,18 +390,18 @@ const styles = StyleSheet.create({
     width: 200,
     height: 150,
     borderRadius: 8,
-    marginBottom: 16,
+    marginBottom: moderateScale(10),
   },
   modalTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 8,
+    marginBottom: moderateScale(8),
   },
   closeButton: {
-    marginTop: 20,
+    marginTop: moderateScale(10),
     backgroundColor: '#4B5E9E',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingVertical: moderateScale(5),
+    paddingHorizontal: moderateScale(10),
     borderRadius: 8,
   },
   

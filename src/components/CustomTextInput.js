@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { View, TextInput, Text, StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
 import {
+    moderateScale,
     moderateVerticalScale,
 } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -57,8 +58,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: color.Icon_Color,
         borderRadius: 5,
-        paddingVertical: 2,
-        paddingHorizontal: 10,
+        paddingVertical: moderateScale(2),
+        paddingHorizontal: moderateScale(10),
         flexDirection: 'row',
         alignItems: 'center',
     },
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: -10,
         left: 10,
-        paddingHorizontal: 5,
+        paddingHorizontal: moderateScale(5),
         fontSize: 12,
         color: color.Icon_Color,
     },

@@ -44,11 +44,11 @@ function App(): React.JSX.Element {
         backgroundColor={backgroundStyle.backgroundColor}
       />
      <NavigationContainer>
-      <StatusBar 
+      {/* <StatusBar 
          barStyle="dark-content"
          backgroundColor={isDarkMode ? color.PrimaryBlue : "#fff"}
          translucent={true}
-      />
+      /> */}
       <Navigation/>
       <Toast config={toastConfig} />
     </NavigationContainer>

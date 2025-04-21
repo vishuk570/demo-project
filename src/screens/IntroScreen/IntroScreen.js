@@ -27,7 +27,8 @@ const IntroScreen = () => {
     if (currentIndex < slides.length - 1) {
       flatListRef.current?.scrollToIndex({ index: currentIndex + 1 });
     } else {
-      navigation.navigate('Login');
+      // navigation.navigate('Login');
+      navigation.replace('Login');
     }
   };
 
@@ -65,13 +66,13 @@ const IntroScreen = () => {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#EFF2F7' },
-  slide: { width, alignItems: 'center', justifyContent: 'center', padding: 0 },
+  slide: { width, alignItems: 'center', justifyContent: 'center', padding: moderateScale(0) },
   title: { fontSize: 24, fontWeight: 'bold', color: '#15406B' },
-  description: { fontSize: 16, textAlign: 'center', color: '#484F56', marginTop: 10 },
-  nextButton: { position: 'absolute', bottom: 50, right: 20, padding: 15, backgroundColor: color.PrimaryBlue, borderRadius: 10 },
+  description: { fontSize: 16, textAlign: 'center', color: '#484F56', marginTop: moderateScale(10) },
+  nextButton: { position: 'absolute', bottom: 50, right: 20, paddingHorizontal: moderateScale(10),paddingVertical: moderateScale(8), backgroundColor: color.PrimaryBlue, borderRadius: 10 },
   buttonText: { color: '#FFF', fontSize: 16 },
   dotContainer: { flexDirection: 'row', position: 'absolute', bottom: 100, alignSelf: 'center' },
-  dot: { height: 10, width: 10, borderRadius: 5, backgroundColor: '#C4C4C4', margin: 5 },
+  dot: { height: 10, width: 10, borderRadius: 5, backgroundColor: '#C4C4C4', margin: moderateScale(5) },
   activeDot: { backgroundColor: '#185DA5' },
   img: {
           height: '60%',

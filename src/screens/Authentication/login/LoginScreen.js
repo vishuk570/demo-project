@@ -61,7 +61,8 @@ const LoginScreen = ({ navigation }) => {
             setItem('authToken', res?.data?.token)
             setAuthToken(res?.data?.token)
             // setItem('loginData', JSON.stringify(res.data.Data))
-            navigation.navigate('QuarryDetails');
+            // navigation.navigate('QuarryDetails');
+            navigation.replace('QuarryDetails');
         } else {
             // showToast('error', 'Alert', res.data.Message)
             showGenericError()

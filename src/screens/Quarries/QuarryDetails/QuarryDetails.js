@@ -12,6 +12,7 @@ import {
   StatusBar,
   Platform 
 } from 'react-native';
+import { moderateScale } from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const QuarryDetails = ({ visible, onClose, quarryDetailsData }) => {
@@ -99,16 +100,16 @@ const styles = StyleSheet.create({
   modalHeader: {
     flexDirection: 'row',
     // justifyContent: 'flex-end',
-    padding: 16,
+    padding: moderateScale(10),
     borderBottomWidth: 1,
     borderBottomColor: '#E9ECEF',
     backgroundColor: '#fff',
   },
   closeButton: {
-    padding: 8,
+    padding: moderateScale(6),
     position: 'absolute',
-    right: 16,
-    top: 10,
+    right: moderateScale(4),
+    top: moderateScale(5),
     borderRadius: 50,
     backgroundColor: '#fff',
     elevation: 5,
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: 20,
+    padding: moderateScale(10),
     alignItems: 'center',
   },
   scrollContainer: {
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: 20,
+    padding: moderateScale(10),
     alignItems: 'center',
     backgroundColor: '#F8F9FA',
   },
@@ -140,8 +141,8 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     backgroundColor: '#fff',
     borderRadius: 15,
-    padding: 10,
-    marginBottom: 20,
+    padding: moderateScale(6),
+    marginBottom: moderateScale(12),
   },
   logo: {
     width: 150,
@@ -152,15 +153,15 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: '#2C3E50',
-    marginBottom: 20,
+    marginBottom: moderateScale(12),
     textAlign: 'center',
   },
   card: {
     backgroundColor: '#fff',
     borderRadius: 15,
-    padding: 20,
+    padding: moderateScale(10),
     width: '100%',
-    marginBottom: 20,
+    marginBottom: moderateScale(12),
     elevation: 3,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -170,13 +171,13 @@ const styles = StyleSheet.create({
   sectionHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: moderateScale(6),
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: '600',
     color: '#4B5E9E',
-    marginLeft: 10,
+    marginLeft: moderateScale(4),
   },
   text: {
     fontSize: 16,
@@ -189,15 +190,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#4B5E9E',
-    padding: 15,
+    padding: moderateScale(8),
     borderRadius: 10,
-    marginTop: 10,
+    marginTop: moderateScale(4),
   },
   mapButtonText: {
     color: '#fff',
     fontSize: 16,
     fontWeight: '600',
-    marginLeft: 8,
+    marginLeft: moderateScale(2),
   },
 });
 

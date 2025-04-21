@@ -6,6 +6,7 @@ import color from '../../../constants/theme';
 import { checkNetworkConnection } from '../../../utils/networkUtils';
 import { api } from '../../../utils/http.common';
 import { showGenericError } from '../../../utils/toastUtils';
+import { moderateScale } from 'react-native-size-matters';
 // import QuarryDetails from './QuarryDetails';
 
 const trucksDetails = [
@@ -82,7 +83,7 @@ const TruckDetailsScreen = ({route}) => {
         data={trucksDetails}
         keyExtractor={(item, index) => index.toString()}
         renderItem={renderItem}
-        contentContainerStyle={{ padding: 16 }}
+        contentContainerStyle={{ padding: moderateScale(6) }}
       />
       {/* <QuarryDetails
         visible={quarryDetailsModal}
@@ -102,25 +103,26 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: color.PrimaryBlue,
-    padding: 12,
+    padding: moderateScale(6),
     borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: moderateScale(8),
     justifyContent: 'space-between',
     elevation: 4,
-    width: '90%',
+    width: '85%',
   },
   card1: {
     backgroundColor: color.PrimaryBlue,
-    padding: 5,
+    padding: moderateScale(8),
+    justifyContent:'center',
     borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 16,
-    marginLeft: 10,
+    marginBottom: moderateScale(8),
+    marginLeft: moderateScale(5),
     elevation: 4,
-    width: '10%',
+    width: '15%',
   },
   stoneName: {
     color: '#fff',
@@ -131,7 +133,7 @@ const styles = StyleSheet.create({
   count: {
     color: '#fff',
     fontSize: 16,
-    marginRight: 10,
+    marginRight: moderateScale(5),
   },
   rightSection: {
     flexDirection: 'row',

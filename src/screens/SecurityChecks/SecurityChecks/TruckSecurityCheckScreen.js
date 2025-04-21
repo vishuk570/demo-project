@@ -15,6 +15,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { launchCamera } from 'react-native-image-picker';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import color from '../../../constants/theme';
+import { moderateScale } from 'react-native-size-matters';
 
 const TruckSecurityCheckScreen = ({ navigation, route }) => {
   const { blockMarkerRef, invoiceNumber, truckNumber, truckWeight } = route.params;
@@ -136,32 +137,32 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   scrollContent: {
-    padding: 16,
-    paddingBottom: 100, // extra padding for fixed button space
+    padding: moderateScale(10),
+    paddingBottom: moderateScale(30), // extra padding for fixed button space
   },
   section: {
     backgroundColor: '#F5F5F5',
     borderRadius: 14,
-    padding: 12,
-    marginBottom: 16,
+    padding: moderateScale(6),
+    marginBottom: moderateScale(8),
   },
   sectionTitle: {
     backgroundColor: '#39497A',
     color: '#fff',
-    paddingVertical: 4,
-    paddingHorizontal: 8,
+    paddingVertical: moderateScale(3),
+    paddingHorizontal: moderateScale(4),
     borderRadius: 6,
     fontSize: 16,
-    marginBottom: 8,
+    marginBottom: moderateScale(6),
   },
   sectionValue: {
     fontSize: 16,
-    marginVertical: 4,
+    marginVertical: moderateScale(4),
   },
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 14,
+    marginBottom: moderateScale(7),
   },
   label: {
     flex: 3,
@@ -175,25 +176,25 @@ const styles = StyleSheet.create({
   dateInput: {
     flex: 5,
     backgroundColor: '#F0F0F0',
-    padding: 10,
+    padding: moderateScale(5),
     borderRadius: 8,
   },
   input: {
     flex: 5,
     backgroundColor: '#F0F0F0',
-    padding: 10,
+    padding: moderateScale(5),
     borderRadius: 8,
   },
   docsRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 8,
+    marginTop: moderateScale(6),
   },
   captureBtn: {
     backgroundColor: color.PrimaryBlue,
-    padding: 14,
+    padding: moderateScale(12),
     borderRadius: 10,
-    marginBottom: 20,
+    marginBottom: moderateScale(8),
     alignItems: 'center',
   },
   captureText: {
@@ -204,7 +205,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 200,
     borderRadius: 10,
-    marginVertical: 12,
+    marginVertical: moderateScale(8),
   },
   fixedBottom: {
     position: 'absolute',
@@ -212,13 +213,13 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     backgroundColor: '#fff',
-    padding: 10,
+    padding: moderateScale(5),
     borderTopWidth: 1,
     borderTopColor: '#ddd',
   },
   saveBtn: {
     backgroundColor: color.PrimaryBlue,
-    padding: 16,
+    padding: moderateScale(8),
     borderRadius: 10,
     alignItems: 'center',
   },

@@ -10,7 +10,9 @@ import {
   BlockDetailForm,
   TruckDetailsScreen,
   TruckApproveScreen,
-  TruckSecurityCheckScreen
+  TruckSecurityCheckScreen,
+  Main,
+  Settings
 } from '../screens';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -19,6 +21,7 @@ import { setAuthToken } from '../utils/http.common';
 import { removeItem } from '../utils/asyncStorage';
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import color from '../constants/theme';
+import { moderateScale } from 'react-native-size-matters';
 
 const Stack = createNativeStackNavigator();
 
@@ -45,7 +48,11 @@ const HeaderRightMenu = () => {
 
   return (
     <View>
-      <TouchableOpacity onPress={() => setModalVisible(true)} style={{marginRight: 15}}>
+      <TouchableOpacity onPress={() => {
+        // setModalVisible(true)
+        navigation.navigate('ProfileMain');
+      }} 
+      style={styles.accountBtn}>
         <Icon name="account-circle" size={28} color="#fff" />
       </TouchableOpacity>
 
@@ -158,7 +165,33 @@ const Navigation = () => {
           headerRight: () => <HeaderRightMenu />,
         })}
       />
+      <Stack.Screen
+        name="ProfileMain"
+        component={Main}
+        options={({route}) => ({
+          animation: 'slide_from_right',
+          headerShown:false
+          // headerTitleAlign: 'center',
+          // headerTintColor: '#fff',
+          // headerTitle:'',
+          // headerStyle: {backgroundColor: color.PrimaryBlue,},
+        })}
+      />
+
+      <Stack.Screen
+        name="Settings"
+        component={Settings}
+        options={({route}) => ({
+          animation: 'slide_from_right',
+          headerShown:false
+          // headerTitleAlign: 'center',
+          // headerTintColor: '#fff',
+          // headerTitle:'',
+          // headerStyle: {backgroundColor: color.PrimaryBlue,},
+        })}
+      />
     </Stack.Navigator>
+    
   );
 };
 
@@ -170,23 +203,26 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.4)',
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
-    paddingTop: 55,
-    paddingRight: 15,
+    paddingTop: moderateScale(40),
+    paddingRight: moderateScale(10),
   },
   modalContent: {
     backgroundColor: '#fff',
     borderRadius: 8,
-    padding: 10,
+    padding: moderateScale(5),
     width: 160,
   },
   menuItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 10,
+    paddingVertical: moderateScale(5),
   },
   menuText: {
-    marginLeft: 10,
+    marginLeft: moderateScale(5),
     fontSize: 16,
     color: color.PrimaryBlue,
   },
+  accountBtn : {
+    marginRight: moderateScale(8)
+  }
 });

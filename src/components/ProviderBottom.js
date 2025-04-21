@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     img: {
         width: 42,
         height: 16,
-        marginTop: 2
+        marginTop: moderateVerticalScale(2)
     },
     powered: {
         flexDirection: 'row',

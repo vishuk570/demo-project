@@ -18,11 +18,13 @@ const Splash = () => {
         console.log("hello2",AuthToken);
         if(AuthToken){
             setAuthToken(AuthToken)
-            navigation.navigate('QuarryDetails')
+            // navigation.navigate('QuarryDetails')
+            navigation.replace('QuarryDetails')
         } else {
             console.log("hello3",navigation);
             // navigation.navigate('DrawerNavigation')
-            navigation.navigate('IntroScreen');
+            // navigation.navigate('IntroScreen');
+            navigation.replace('IntroScreen');
             // navigation.navigate('Login');
         }
     }

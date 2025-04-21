@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, FlatList } from 'r
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import color from '../../../constants/theme';
+import { moderateScale } from 'react-native-size-matters';
 
 const items = ['SRGM1', 'SRGM2', 'SRGM3', 'SRGM4', 'SRGM5'];
 
@@ -64,7 +65,7 @@ const TruckApproveScreen = () => {
         data={items}
         keyExtractor={(item, index) => index.toString()}
         renderItem={renderItem}
-        contentContainerStyle={{ paddingVertical: 16 }}
+        contentContainerStyle={{ paddingVertical: moderateScale(8) }}
       />
 
       <TouchableOpacity style={styles.approveButton} onPress={handleApprove}>
@@ -80,10 +81,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: 16
+    padding: moderateScale(8)
   },
   label: {
-    marginTop: 20,
+    marginTop: moderateScale(12),
     fontSize: 14,
     fontWeight: 'bold',
     color: '#000'
@@ -91,18 +92,18 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
     borderColor: '#ccc',
-    padding: 10,
+    padding: moderateScale(10),
     borderRadius: 8,
-    marginTop: 8,
+    marginTop: moderateScale(4),
     color: '#000'
   },
   itemButton: {
     backgroundColor: color.PrimaryBlue,
-    padding: 14,
+    padding: moderateScale(12),
     borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: moderateScale(10),
     justifyContent: 'space-between',
     elevation: 4
   },
@@ -113,11 +114,11 @@ const styles = StyleSheet.create({
   },
   approveButton: {
     backgroundColor: color.PrimaryBlue,
-    padding: 14,
+    padding: moderateScale(10),
     borderRadius: 12,
     alignItems: 'center',
     elevation: 4,
-    marginTop: 20
+    marginTop: moderateScale(10)
   },
   approveButtonText: {
     color: '#fff',

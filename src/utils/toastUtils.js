@@ -1,5 +1,6 @@
 import Toast, { BaseToast, ErrorToast } from 'react-native-toast-message';
 import theme from '../constants/theme';
+import { moderateScale } from 'react-native-size-matters';
 
 
 export const toastConfig = {
@@ -7,7 +8,7 @@ export const toastConfig = {
       <BaseToast
         {...props}
         style={{ width:'95%', borderLeftColor: theme.green_color }}
-        contentContainerStyle={{ paddingHorizontal: 15 }}
+        contentContainerStyle={{ paddingHorizontal: moderateScale(8) }}
         text1Style={{
           fontSize: 13,
         }}

@@ -14,6 +14,7 @@ import {launchImageLibrary} from 'react-native-image-picker';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { api } from '../../../utils/http.common';
 import { showToast } from '../../../utils/toastUtils';
+import { moderateScale } from 'react-native-size-matters';
 
 const BlockDetailForm = ({route, navigation}) => {
   const {referenceNumber, refId} = route.params;
@@ -220,7 +221,7 @@ const BlockDetailForm = ({route, navigation}) => {
           </ScrollView>
 
           <View style={styles.iconContainer}>
-            <Icon name="microphone" size={28} style={{marginRight: 10}} />
+            <Icon name="microphone" size={28} style={styles.microphoneIcon} />
             <Icon name="video" size={28} />
           </View>
         </View>
@@ -244,11 +245,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   formContainer: {
-    padding: 16,
-    paddingBottom: 20,
+    padding: moderateScale(10),
+    paddingBottom: moderateScale(14),
   },
   bottomContainer: {
-    padding: 16,
+    padding: moderateScale(8),
     backgroundColor: 'white',
     borderTopWidth: 1,
     borderTopColor: '#eee',
@@ -264,12 +265,12 @@ const styles = StyleSheet.create({
   header: {
     fontWeight: 'bold',
     fontSize: 16,
-    marginBottom: 4,
+    marginBottom: moderateScale(2),
   },
   valueBox: {
     backgroundColor: '#E9F0FF',
-    padding: 10,
-    marginBottom: 16,
+    padding: moderateScale(8),
+    marginBottom: moderateScale(12),
     borderRadius: 5,
   },
   valueText: {
@@ -277,8 +278,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   label: {
-    marginBottom: 4,
-    marginTop: 12,
+    marginBottom: moderateScale(2),
+    marginTop: moderateScale(8),
   },
   inputBox: {
     borderWidth: 1,
@@ -291,20 +292,20 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 5,
-    padding: 10,
-    marginBottom: 10,
+    padding: moderateScale(8),
+    marginBottom: moderateScale(8),
   },
   radioRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: moderateScale(8),
     flexWrap: 'wrap',
   },
   radioItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 20,
-    marginBottom: 10,
+    marginRight: moderateScale(15),
+    marginBottom: moderateScale(4),
   },
   radioCircle: {
     width: 20,
@@ -312,7 +313,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#333',
-    marginRight: 6,
+    marginRight: moderateScale(4),
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -332,14 +333,14 @@ const styles = StyleSheet.create({
   subHeader: {
     fontWeight: 'bold',
     fontSize: 16,
-    marginVertical: 10,
+    marginVertical: moderateScale(6),
   },
   imageBox: {
     width: 60,
     height: 60,
     borderWidth: 1,
     borderColor: '#ccc',
-    marginRight: 10,
+    marginRight: moderateScale(6),
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
@@ -347,11 +348,11 @@ const styles = StyleSheet.create({
   iconContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    marginBottom: 10,
+    marginBottom: moderateScale(6),
   },
   saveBtn: {
     backgroundColor: '#4158D0',
-    padding: 14,
+    padding: moderateScale(8),
     borderRadius: 8,
     alignItems: 'center',
   },
@@ -359,6 +360,9 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
+  microphoneIcon: {
+    marginRight:moderateScale(10)
+  }
 });
 
 export default BlockDetailForm;

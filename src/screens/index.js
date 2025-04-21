@@ -9,6 +9,8 @@ import BlockDetailForm from "./Quarries/Blocks/BlockDetailForm";
 import TruckDetailsScreen from "./SecurityChecks/TruckDetails/TruckDetailsScreen";
 import TruckApproveScreen from "./SecurityChecks/TruckDetails/TruckApproveScreen";
 import TruckSecurityCheckScreen from "./SecurityChecks/SecurityChecks/TruckSecurityCheckScreen";
+import Main from "./Profiles/Main";
+import Settings from "./Profiles/Settings/Settings";
 export {
     LoginScreen,
     SignupScreen,
@@ -20,5 +22,7 @@ export {
     BlockDetailForm,
     TruckDetailsScreen,
     TruckApproveScreen,
-    TruckSecurityCheckScreen
+    TruckSecurityCheckScreen,
+    Main,
+    Settings
 }
